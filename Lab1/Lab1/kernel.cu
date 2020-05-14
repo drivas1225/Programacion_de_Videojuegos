@@ -92,11 +92,11 @@ int main()
 	//kernelVector_x_constant <<< ceil(size / 512.0), 512 >>> (arr_DEVICE, size, 65);
 	
 	//// tarea ////
-	//KernelVector_add_constant <<< ceil(size / 512.0), 512 >>> (arrA,res,size,e);
+	KernelVector_add_constant <<< ceil(size / 512.0), 512 >>> (arrA,res,size,e);
 	//KernelVector_sub_constant <<< ceil(size / 512.0), 512 >>> (arrA, res, size, e);
 	
 	//KernelVector_add_vector <<< ceil(size / 512.0), 512 >>> (arrA, arrB, res, size);
-	KernelVector_sub_vector <<< ceil(size / 512.0), 512 >>> (arrA, arrB, res, size);
+	//KernelVector_sub_vector <<< ceil(size / 512.0), 512 >>> (arrA, arrB, res, size);
 
 
 	//Fuerzo una llamada Sincrona
