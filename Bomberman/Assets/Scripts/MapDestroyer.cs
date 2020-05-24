@@ -54,9 +54,18 @@ public class MapDestroyer : MonoBehaviour
         {
             return false;
         }
-        if (tilemap.GetInstantiatedObject(cell))
+        Vector3 cellsize = tilemap.cellSize;
+        Vector3 rayStart = tilemap.CellToWorld(cell) + new Vector3(cellsize[0] / 2, cellsize[1] / 2, 0);
+        RaycastHit2D hit = Physics2D.Raycast(rayStart, new Vector2(cellsize[0], cellsize[1]), 1);
+        Vector2 cellCenterPos = tilemap.GetCellCenterWorld(cell);
+        if (hit.collider)
         {
-            Debug.Log(tilemap.GetInstantiatedObject(cell));
+            if (hit.collider.tag == "Bomb")
+            {
+                Vector3 bombLocation = (hit.transform.gameObject.transform.position);
+                Destroy(hit.transform.gameObject);
+                Explode(bombLocation);
+            }
         }
 
         Vector3 explosionPos = tilemap.GetCellCenterWorld(cell);

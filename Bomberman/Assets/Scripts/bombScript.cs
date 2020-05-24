@@ -12,8 +12,8 @@ public class bombScript : MonoBehaviour
         countdown -= Time.deltaTime;
         if (countdown <= 0f)
         {
-            FindObjectOfType<MapDestroyer>().Explode(transform.position);
             Destroy(gameObject);
+            FindObjectOfType<MapDestroyer>().Explode(transform.position);
         }
     }
 }
