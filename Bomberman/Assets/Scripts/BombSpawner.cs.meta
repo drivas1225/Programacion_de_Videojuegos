@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fd7c50efd6f630843a8b2310fb7ad3f1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - tilemap: {instanceID: 0}
+  - bombPrefab: {fileID: 4277094029236805059, guid: a3db45ffc90d6344386c54d53b1d49bc,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
