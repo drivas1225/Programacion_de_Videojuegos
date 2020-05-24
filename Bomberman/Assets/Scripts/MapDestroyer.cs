@@ -75,6 +75,10 @@ public class MapDestroyer : MonoBehaviour
             {
                 Destroy(hit.transform.gameObject);
             }
+            if (hit.collider.tag == "Enemy")
+            {
+                Destroy(hit.transform.gameObject);
+            }
         }
 
         Vector3 explosionPos = tilemap.GetCellCenterWorld(cell);
