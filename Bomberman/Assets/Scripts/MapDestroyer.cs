@@ -9,6 +9,11 @@ public class MapDestroyer : MonoBehaviour
     public Tile wallTile;
     public Tile destructibleTile;
     public GameObject explosionPrefab;
+    public GameObject power1Prefab;
+    public GameObject power2Prefab;
+    public GameObject power3Prefab;
+    public GameObject power4Prefab;
+    public GameObject power5Prefab;
     public int radio = 2;
 
 
@@ -66,6 +71,10 @@ public class MapDestroyer : MonoBehaviour
                 Destroy(hit.transform.gameObject);
                 Explode(bombLocation);
             }
+            if (hit.collider.tag == "Power-up")
+            {
+                Destroy(hit.transform.gameObject);
+            }
         }
 
         Vector3 explosionPos = tilemap.GetCellCenterWorld(cell);
@@ -73,6 +82,7 @@ public class MapDestroyer : MonoBehaviour
         if (tile == destructibleTile)
         {
             tilemap.SetTile(cell, null);
+            Instantiate(power1Prefab,explosionPos, Quaternion.identity);
             return false;
         }
         return true;
