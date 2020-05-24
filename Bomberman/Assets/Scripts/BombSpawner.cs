@@ -11,9 +11,10 @@ public class BombSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyUp("space"))
         {
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 worldPos = transform.position;
             Vector3Int cell = tilemap.WorldToCell(worldPos);
             Vector2 cellCenterPos = tilemap.GetCellCenterWorld(cell);
             Instantiate(bombPrefab, cellCenterPos, Quaternion.identity);
