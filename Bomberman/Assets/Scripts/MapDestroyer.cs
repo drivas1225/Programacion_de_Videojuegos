@@ -82,7 +82,32 @@ public class MapDestroyer : MonoBehaviour
         if (tile == destructibleTile)
         {
             tilemap.SetTile(cell, null);
-            Instantiate(power1Prefab,explosionPos, Quaternion.identity);
+            int probability = Random.Range(0,100);
+            if (probability >= 60)
+            {
+                if(probability <= 75)
+                {
+                    Instantiate(power1Prefab, explosionPos, Quaternion.identity);
+                    return false;
+                }
+                if (probability <= 85)
+                {
+                    Instantiate(power2Prefab, explosionPos, Quaternion.identity);
+                    return false;
+                }
+                if (probability <= 91)
+                {
+                    Instantiate(power3Prefab, explosionPos, Quaternion.identity);
+                    return false;
+                }
+                if (probability <= 96)
+                {
+                    Instantiate(power4Prefab, explosionPos, Quaternion.identity);
+                    return false;
+                }
+                Instantiate(power5Prefab, explosionPos, Quaternion.identity);
+                return false;
+            }
             return false;
         }
         return true;
