@@ -849,15 +849,6 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 2
-  - first: {x: -2, y: -1, z: 0}
-    second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 2
   - first: {x: 6, y: -1, z: 0}
     second:
       m_TileIndex: 1
@@ -1420,17 +1411,17 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 88
     m_Data: {fileID: 11400000, guid: 8979d2e80f80e9d488c9dc0265c555fd, type: 2}
-  - m_RefCount: 46
+  - m_RefCount: 45
     m_Data: {fileID: 11400000, guid: e73b1c0094bd9984cbaa17d74c9d8d54, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 88
     m_Data: {fileID: 6007627129536956325, guid: 04b6e54e25ba35c41af88d9b8879b0a9,
       type: 3}
-  - m_RefCount: 46
+  - m_RefCount: 45
     m_Data: {fileID: 5663061954668274717, guid: 04b6e54e25ba35c41af88d9b8879b0a9,
       type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 134
+  - m_RefCount: 133
     m_Data:
       e00: 1
       e01: 0
@@ -1449,7 +1440,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 134
+  - m_RefCount: 133
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3800,9 +3791,9 @@ GameObject:
   - component: {fileID: 1543091936}
   - component: {fileID: 1543091935}
   - component: {fileID: 1543091934}
-  - component: {fileID: 1543091938}
   - component: {fileID: 1543091937}
   - component: {fileID: 1543091939}
+  - component: {fileID: 1543091938}
   m_Layer: 0
   m_Name: Dinosaur
   m_TagString: Untagged
@@ -3886,7 +3877,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543091933}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: -0.37, z: 0}
+  m_LocalPosition: {x: 2.5, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3913,8 +3904,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &1543091938
-BoxCollider2D:
+--- !u!58 &1543091938
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3927,18 +3918,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6, y: 1.08}
-    newSize: {x: 0.15, y: 0.27}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
-  m_EdgeRadius: 0
+  m_Radius: 0.4
 --- !u!114 &1543091939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3954,3 +3935,9 @@ MonoBehaviour:
   movSpeed: 1
   rb: {fileID: 1543091937}
   animator: {fileID: 1543091934}
+  tilemap: {fileID: 83968905}
+  wallTile: {fileID: 11400000, guid: 8979d2e80f80e9d488c9dc0265c555fd, type: 2}
+  destructibleTile: {fileID: 11400000, guid: e73b1c0094bd9984cbaa17d74c9d8d54, type: 2}
+  horizontal: 1
+  vertical: 0
+  movment: {x: 0, y: 0}
