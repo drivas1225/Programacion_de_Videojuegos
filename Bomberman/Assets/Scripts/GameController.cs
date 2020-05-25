@@ -38,6 +38,8 @@ public class GameController : MonoBehaviour
     public void die()
     {
         lives -= 1;
+        maxBombs = 1;
+        FindObjectOfType<MapDestroyer>().radio = 2;
         Vector3 position = tilemap.GetCellCenterWorld(new Vector3Int(-8, 3, 0));
         FindObjectOfType<PlayerMovement>().gameObject.transform.position = position;
         FindObjectOfType<PlayerMovement>().tag = "Invincible";
