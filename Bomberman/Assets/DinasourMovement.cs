@@ -31,6 +31,7 @@ public class DinasourMovement : MonoBehaviour
         tile = tilemap.GetTile<Tile>(currentPos + new Vector3Int((int)horizontal, (int)vertical, 0));
         if (currentPosition == transform.position )
         {
+            Debug.Log(tilemap.GetCellCenterWorld(currentPos));
             List<Vector2> directions = new List<Vector2>();
             tile = tilemap.GetTile<Tile>(currentPos + new Vector3Int(1, 0, 0));
             if (tile != wallTile && tile != destructibleTile)
