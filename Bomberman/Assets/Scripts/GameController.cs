@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -13,31 +13,29 @@ public class GameController : MonoBehaviour
     public int score = 0;
     public Tilemap tilemap;
     public float invincible = 5f;
-    public Text scoreText;
-    public Text livesText;
-    public Text bombText;
-    public Text flameText;
-    public Text speedText;
-    public GameObject portalPrefab;
-    public GameObject instantiatedPortal;
-
+    public float spriteBlinkingTimer = 0.0f;
+    public float spriteBlinkingMiniDuration = 0.1f;
+    public float spriteBlinkingTotalTimer = 0.0f;
+    public float spriteBlinkingTotalDuration = 1.0f;
     public bool startBlinking = false;
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text ="0000";
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(lives <= 0)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
     private void FixedUpdate()
     {
-        if(currentEnemies == 0 && !instantiatedPortal)
+        if(currentEnemies == 0)
         {
-            Vector3 centerPos = tilemap.GetCellCenterWorld(new Vector3Int(0, 0, 0));
-            instantiatedPortal = Instantiate(portalPrefab, centerPos, Quaternion.identity);
             Debug.Log("Ya ganaste. Que quieres? Te aplaudo?");
         }
         invincible -= Time.deltaTime;
@@ -48,16 +46,6 @@ public class GameController : MonoBehaviour
             startBlinking = false;
             FindObjectOfType<PlayerMovement>().gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
-        if(score >= 100000)
-        {
-            score -= 100000;
-            lives += 1;
-        }
-        scoreText.text = score.ToString();
-        livesText.text = lives.ToString();
-        bombText.text = maxBombs.ToString();
-        flameText.text = FindObjectOfType<MapDestroyer>().radio.ToString();
-        speedText.text = FindObjectOfType<PlayerMovement>().movSpeed.ToString();
     }
 
     public void die()
@@ -67,7 +55,6 @@ public class GameController : MonoBehaviour
         FindObjectOfType<MapDestroyer>().radio = 2;
         Vector3 position = tilemap.GetCellCenterWorld(new Vector3Int(-8, 3, 0));
         FindObjectOfType<PlayerMovement>().gameObject.transform.position = position;
-        FindObjectOfType<PlayerMovement>().movSpeed = 5;
         FindObjectOfType<PlayerMovement>().tag = "Invincible";
         invincible = 5;
     }
