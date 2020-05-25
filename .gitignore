@@ -10,6 +10,15 @@ Bomberman/[Bb]uilds/
 Bomberman/[Ll]ogs/
 Bomberman/[Mm]emoryCaptures/
 
+
+Flocking/[Ll]ibrary/
+Flocking/[Tt]emp/
+Flocking/[Oo]bj/
+Flocking/[Bb]uild/
+Flocking/[Bb]uilds/
+Flocking/[Ll]ogs/
+Flocking/[Mm]emoryCaptures/
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !Bomberman/[Aa]ssets/**/*.meta
 
