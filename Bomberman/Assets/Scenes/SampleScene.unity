@@ -1832,7 +1832,9 @@ MonoBehaviour:
   bombText: {fileID: 519102621}
   flameText: {fileID: 615716249}
   speedText: {fileID: 823936490}
-  portalPrefab: {fileID: 0}
+  portalPrefab: {fileID: 3502511694673029063, guid: 025359bfd72c2fc47abf34a00c6f9bde,
+    type: 3}
+  instantiatedPortal: {fileID: 0}
   startBlinking: 0
 --- !u!4 &172406426
 Transform:
