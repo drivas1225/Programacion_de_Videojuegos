@@ -16,6 +16,15 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Bomp" )
+        {
+            Debug.Log("chocoooo");
+            other.GetComponent<BoxCollider2D>().isTrigger = false;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

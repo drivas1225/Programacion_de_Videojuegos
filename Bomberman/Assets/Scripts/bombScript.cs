@@ -6,6 +6,15 @@ public class bombScript : MonoBehaviour
 {
     public float countdown = 2f;
 
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Invincible")
+        {
+            FindObjectOfType<BoxCollider2D>().enabled = true;
+
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
