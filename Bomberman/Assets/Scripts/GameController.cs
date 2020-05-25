@@ -13,23 +13,30 @@ public class GameController : MonoBehaviour
     public int score = 0;
     public Tilemap tilemap;
     public float invincible = 5f;
-    public float spriteBlinkingTimer = 0.0f;
-    public float spriteBlinkingMiniDuration = 0.1f;
-    public float spriteBlinkingTotalTimer = 0.0f;
-    public float spriteBlinkingTotalDuration = 1.0f;
+    public Text scoreText;
+    public Text livesText;
+    public Text bombText;
+    public Text flameText;
+    public Text speedText;
+    public GameObject portalPrefab;
+    public GameObject instantiatedPortal;
+    private AudioManager aManager;
+
     public bool startBlinking = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        scoreText.text ="0000";
+        aManager = FindObjectOfType<AudioManager>();
+        aManager.Play("Level Start");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(lives <= 0)
+        if (aManager.finishedPlaying("Level Start"))
         {
-            SceneManager.LoadScene(3);
+            aManager.Play("Demo");
         }
     }
     private void FixedUpdate()
@@ -57,6 +64,7 @@ public class GameController : MonoBehaviour
         FindObjectOfType<PlayerMovement>().gameObject.transform.position = position;
         FindObjectOfType<PlayerMovement>().tag = "Invincible";
         invincible = 5;
+        aManager.Play("Death");
     }
 
     private void SpriteBlinkingEffect()

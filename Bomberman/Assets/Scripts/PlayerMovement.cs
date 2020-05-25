@@ -8,12 +8,15 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator animator;
+    private AudioManager aManager;
+
 
     Vector2 movment;
     // Start is called before the first frame update
     void Start()
     {
-        
+        aManager = FindObjectOfType<AudioManager>();
+
     }
 
     
