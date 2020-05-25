@@ -66,6 +66,7 @@ public class MapDestroyer : MonoBehaviour
         Vector2 cellCenterPos = tilemap.GetCellCenterWorld(cell);
         if (hit.collider)
         {
+            Debug.Log(hit.collider.tag);
             if (hit.collider.tag == "Bomb")
             {
                 Vector3 bombLocation = (hit.transform.gameObject.transform.position);
@@ -80,6 +81,10 @@ public class MapDestroyer : MonoBehaviour
             {
                 hit.transform.gameObject.GetComponent<enemyData>().lives-=1;
                 FindObjectOfType<GameController>().currentEnemies -= 1;
+            }
+            if (hit.collider.tag == "Player")
+            {
+                FindObjectOfType<GameController>().die();
             }
         }
 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1448048261363690558}
   - component: {fileID: 2819250742324568855}
   - component: {fileID: 2723099765901404628}
+  - component: {fileID: 6096214062479656131}
   m_Layer: 12
   m_Name: desease2
   m_TagString: Power-up
@@ -107,3 +108,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &6096214062479656131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2197939217574524028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 771088d072dc2424d8005024cfb19974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

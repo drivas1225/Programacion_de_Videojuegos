@@ -20,5 +20,13 @@ public class enemyData : MonoBehaviour
             Destroy(gameObject);
             FindObjectOfType<GameController>().score += score;
         }
+
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player" && FindObjectOfType<GameController>().lives >= 1)
+        {
+            FindObjectOfType<GameController>().die();
+        }
     }
 }
