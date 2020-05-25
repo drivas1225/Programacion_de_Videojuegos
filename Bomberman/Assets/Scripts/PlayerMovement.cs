@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal", movment.x);
         animator.SetFloat("Vertical", movment.y);
         animator.SetFloat("Speed", movment.sqrMagnitude);
+        aManager.Play("Walk");
     }
 
     void FixedUpdate()
