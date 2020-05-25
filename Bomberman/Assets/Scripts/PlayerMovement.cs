@@ -31,12 +31,19 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal", movment.x);
         animator.SetFloat("Vertical", movment.y);
         animator.SetFloat("Speed", movment.sqrMagnitude);
-        aManager.Play("Walk");
+
     }
 
     void FixedUpdate()
     {
         //Movement
+        Vector2 actualPosition = rb.position;
         rb.MovePosition(rb.position + movment * movSpeed * Time.deltaTime);
+        Vector2 newPosition = rb.position;
+        Debug.Log(newPosition + "-" + actualPosition);
+        if(actualPosition!=newPosition)
+        {
+            aManager.Play("Walk");
+        }
     }
 }
