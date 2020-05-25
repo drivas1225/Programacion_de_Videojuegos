@@ -78,7 +78,7 @@ public class MapDestroyer : MonoBehaviour
             }
             if (hit.collider.tag == "Enemy")
             {
-                Destroy(hit.transform.gameObject);
+                hit.transform.gameObject.GetComponent<enemyData>().lives-=1;
                 FindObjectOfType<GameController>().currentEnemies -= 1;
             }
         }

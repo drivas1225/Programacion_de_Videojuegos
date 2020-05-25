@@ -9,7 +9,8 @@ public class flameS : MonoBehaviour
         if (other.gameObject.tag == "Player" )
         {
             FindObjectOfType<MapDestroyer>().radio = 5;
+            FindObjectOfType<GameController>().score += 1000;
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }

@@ -6,10 +6,14 @@ public class bomb : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player" && FindObjectOfType<GameController>().maxBombs < 10)
+        if (other.gameObject.tag == "Player")
         {
-            FindObjectOfType<GameController>().maxBombs += 1;
+            if (FindObjectOfType<GameController>().maxBombs < 10)
+            {
+                FindObjectOfType<GameController>().maxBombs += 1;
+            }
+            FindObjectOfType<GameController>().score += 500;
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }
