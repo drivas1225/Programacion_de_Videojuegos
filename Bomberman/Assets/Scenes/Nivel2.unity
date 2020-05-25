@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 741811529}
   - component: {fileID: 741811531}
   - component: {fileID: 741811530}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,8 +837,106 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1315492668
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 775326898184693014, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: m_Name
+      value: Dinosaur 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 775326898184693032, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 1474209021}
+    - target: {fileID: 775326898184693032, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: destructibleTile
+      value: 
+      objectReference: {fileID: 11400000, guid: cf0a5a0d239420548a7d92c5535e16e8,
+        type: 2}
+    - target: {fileID: 775326898184693032, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: wallTile
+      value: 
+      objectReference: {fileID: 11400000, guid: dd65decbe94ca334497433a990d17804,
+        type: 2}
+    - target: {fileID: 775326898184693035, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.3981436
+      objectReference: {fileID: 0}
+    - target: {fileID: 775326898184693035, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.434914
+      objectReference: {fileID: 0}
+    - target: {fileID: 775326898184693035, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 775326898184693035, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 775326898184693035, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 775326898184693035, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 775326898184693035, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 775326898184693035, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 775326898184693035, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 775326898184693035, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 775326898184693035, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388563845900562306, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083924994776641381, guid: 2d0d83081cfbf2a4f8e76b281bf04814,
+        type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 1474209021}
+    m_RemovedComponents:
+    - {fileID: -850275086167942290, guid: 2d0d83081cfbf2a4f8e76b281bf04814, type: 3}
+    - {fileID: 6281492819850997988, guid: 2d0d83081cfbf2a4f8e76b281bf04814, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 2d0d83081cfbf2a4f8e76b281bf04814, type: 3}
 --- !u!1001 &1358448716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -889,7 +987,7 @@ PrefabInstance:
     - target: {fileID: 1702625556933670000, guid: 688d014ae8afd884f98e91c004137a35,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1702625556933670000, guid: 688d014ae8afd884f98e91c004137a35,
         type: 3}
@@ -988,7 +1086,7 @@ GameObject:
   - component: {fileID: 1474209024}
   - component: {fileID: 1474209023}
   - component: {fileID: 1474209022}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tilemap_walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2528,7 +2626,7 @@ GameObject:
   - component: {fileID: 1504698150}
   - component: {fileID: 1504698152}
   - component: {fileID: 1504698151}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tilemap_bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4085,7 +4183,7 @@ GameObject:
   - component: {fileID: 1692793548}
   - component: {fileID: 1692793550}
   - component: {fileID: 1692793549}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4246,7 +4344,7 @@ GameObject:
   - component: {fileID: 1833335235}
   - component: {fileID: 1833335237}
   - component: {fileID: 1833335236}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tilemap_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}

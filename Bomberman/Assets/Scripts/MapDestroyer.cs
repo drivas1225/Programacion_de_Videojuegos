@@ -65,13 +65,11 @@ public class MapDestroyer : MonoBehaviour
             return false;
         }
         Vector3 cellsize = tilemap.cellSize;
-        Debug.Log(tilemap.GetCellCenterWorld(cell));
         Vector3 rayStart = tilemap.CellToWorld(cell) + new Vector3(cellsize[0] / 2, cellsize[1] / 2, 0);
         RaycastHit2D hit = Physics2D.Raycast(rayStart, new Vector2(cellsize[0], cellsize[1]), 1);
         Vector2 cellCenterPos = tilemap.GetCellCenterWorld(cell);
         if (hit.collider)
         {
-            Debug.Log(hit.collider.tag);
             if (hit.collider.tag == "Bomb")
             {
                 Vector3 bombLocation = (hit.transform.gameObject.transform.position);

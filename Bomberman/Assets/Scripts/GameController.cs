@@ -38,7 +38,16 @@ public class GameController : MonoBehaviour
     {
         if (aManager.finishedPlaying("Level Start"))
         {
-            aManager.Play("Demo");
+            switch (SceneManager.GetActiveScene().name)
+            {
+                case "Nivel2":
+                    aManager.Play("Theme Music");
+                    break;
+                default:
+                    aManager.Play("Demo");
+                    break;
+            }
+
         }
         if(lives <= 0)
         {
