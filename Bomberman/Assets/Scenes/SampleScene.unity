@@ -1553,6 +1553,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a135bab0e051f547add058ec75d917f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lives: 5
+  currentBombs: 0
+  maxBombs: 1
+  currentEnemies: 5
 --- !u!4 &172406426
 Transform:
   m_ObjectHideFlags: 0
@@ -3816,7 +3820,7 @@ MonoBehaviour:
     type: 3}
   power2Prefab: {fileID: 4722867657696718056, guid: 7b8e59e22105f07468a2bd6b4ac6f2de,
     type: 3}
-  power3Prefab: {fileID: 6600779444957385267, guid: ccf2d1a88b2453c43981eeca1f2440a8,
+  power3Prefab: {fileID: 280642191868469857, guid: b92ef1229953a1342b275c86c09e4ff1,
     type: 3}
   power4Prefab: {fileID: 726062770475605659, guid: 9fc9bfa79ea68854d864d25c02a8f5cc,
     type: 3}

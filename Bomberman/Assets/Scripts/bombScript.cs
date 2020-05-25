@@ -14,6 +14,7 @@ public class bombScript : MonoBehaviour
         {
             Destroy(gameObject);
             FindObjectOfType<MapDestroyer>().Explode(transform.position);
+            FindObjectOfType<GameController>().currentBombs -= 1;
         }
     }
 }

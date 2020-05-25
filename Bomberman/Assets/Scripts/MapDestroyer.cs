@@ -79,6 +79,7 @@ public class MapDestroyer : MonoBehaviour
             if (hit.collider.tag == "Enemy")
             {
                 Destroy(hit.transform.gameObject);
+                FindObjectOfType<GameController>().currentEnemies -= 1;
             }
         }
 
