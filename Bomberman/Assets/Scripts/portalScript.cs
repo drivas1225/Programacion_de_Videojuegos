@@ -8,7 +8,7 @@ public class portalScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Invincible")
         {
-            collision.GetComponent<PlayerMovement>().enabled = false;
+            
         }
     }
 }
