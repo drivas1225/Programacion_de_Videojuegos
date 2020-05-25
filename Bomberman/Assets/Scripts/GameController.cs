@@ -40,6 +40,10 @@ public class GameController : MonoBehaviour
         {
             aManager.Play("Demo");
         }
+        if(lives <= 0)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
     private void FixedUpdate()
     {
