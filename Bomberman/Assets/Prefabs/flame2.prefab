@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3631285112141038144}
   - component: {fileID: 6057743034590403408}
   - component: {fileID: 4647383899313098629}
+  - component: {fileID: -3776787841456553243}
   m_Layer: 10
   m_Name: flame2
   m_TagString: Power-up
@@ -107,3 +108,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
+--- !u!114 &-3776787841456553243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4898952984248026948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1a0c687dec5194281fc0315c3ce5f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

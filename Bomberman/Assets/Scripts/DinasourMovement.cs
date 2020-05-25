@@ -25,11 +25,9 @@ public class DinasourMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //input
-        Debug.Log(horizontal + "-" + vertical);
         Vector3Int currentPos = tilemap.WorldToCell(transform.position);
         Tile tile;
-        tile = tilemap.GetTile<Tile>(currentPos + new Vector3Int((int)horizontal, (int)vertical, 0));
+        //tile = tilemap.GetTile<Tile>(currentPos + new Vector3Int((int)horizontal, (int)vertical, 0));
         if (currentPosition == transform.position )
         {
             List<Vector2> directions = new List<Vector2>();
