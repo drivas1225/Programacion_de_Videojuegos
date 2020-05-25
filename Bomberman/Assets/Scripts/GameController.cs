@@ -47,9 +47,10 @@ public class GameController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(currentEnemies == 0)
+        if(currentEnemies <= 0 && !instantiatedPortal)
         {
-            Debug.Log("Ya ganaste. Que quieres? Te aplaudo?");
+            Vector3 worldPos = tilemap.GetCellCenterWorld(new Vector3Int(0, 0, 0));
+            instantiatedPortal = Instantiate(portalPrefab, worldPos, Quaternion.identity);
         }
         invincible -= Time.deltaTime;
         SpriteBlinkingEffect();
@@ -59,6 +60,11 @@ public class GameController : MonoBehaviour
             startBlinking = false;
             FindObjectOfType<PlayerMovement>().gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
+        livesText.text = lives.ToString();
+        bombText.text = maxBombs.ToString();
+        scoreText.text = score.ToString();
+        speedText.text = FindObjectOfType<PlayerMovement>().movSpeed.ToString();
+        flameText.text = FindObjectOfType<MapDestroyer>().radio.ToString();
     }
 
     public void die()

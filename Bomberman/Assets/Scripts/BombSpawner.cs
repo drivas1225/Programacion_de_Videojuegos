@@ -26,8 +26,10 @@ public class BombSpawner : MonoBehaviour
             if ((!hit.collider || hit.collider.tag != "Bomb")&& FindObjectOfType<GameController>().currentBombs < FindObjectOfType<GameController>().maxBombs)
             {
                 aManager.Play("Set Bomb");
-                GameObject bomba = Instantiate(bombPrefab, cellCenterPos, Quaternion.identity) as GameObject;
-                FindObjectOfType<GameController>().currentBombs += 1;
+                if(Instantiate(bombPrefab, cellCenterPos, Quaternion.identity))
+                {
+                    FindObjectOfType<GameController>().currentBombs += 1;
+                }
             }
         }
     }

@@ -25,6 +25,7 @@ public class MapDestroyer : MonoBehaviour
     {
         Vector3Int originCell = tilemap.WorldToCell(worldPos);
         ExplodeCell(originCell);
+
         for (int i = 1; i <= radio; i++)
         {
             if(!ExplodeCell(originCell + new Vector3Int(i, 0, 0)))

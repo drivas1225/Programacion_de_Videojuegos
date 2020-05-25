@@ -8,15 +8,12 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator animator;
-    private AudioManager aManager;
 
 
     Vector2 movment;
     // Start is called before the first frame update
     void Start()
     {
-        aManager = FindObjectOfType<AudioManager>();
-
     }
 
     
@@ -37,13 +34,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //Movement
-        Vector2 actualPosition = rb.position;
         rb.MovePosition(rb.position + movment * movSpeed * Time.deltaTime);
-        Vector2 newPosition = rb.position;
-        Debug.Log(newPosition + "-" + actualPosition);
-        if(actualPosition!=newPosition)
-        {
-            aManager.Play("Walk");
-        }
     }
 }
