@@ -75,6 +75,7 @@ public class MapDestroyer : MonoBehaviour
                 Vector3 bombLocation = (hit.transform.gameObject.transform.position);
                 Destroy(hit.transform.gameObject);
                 Explode(bombLocation);
+                FindObjectOfType<GameController>().currentBombs -= 1;
             }
             if (hit.collider.tag == "Power-up")
             {
