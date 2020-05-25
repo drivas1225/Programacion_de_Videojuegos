@@ -12,6 +12,11 @@ public class GameController : MonoBehaviour
     public int score = 0;
     public Tilemap tilemap;
     public float invincible = 5f;
+    public float spriteBlinkingTimer = 0.0f;
+    public float spriteBlinkingMiniDuration = 0.1f;
+    public float spriteBlinkingTotalTimer = 0.0f;
+    public float spriteBlinkingTotalDuration = 1.0f;
+    public bool startBlinking = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +34,12 @@ public class GameController : MonoBehaviour
             Debug.Log("Ya ganaste. Que quieres? Te aplaudo?");
         }
         invincible -= Time.deltaTime;
+        SpriteBlinkingEffect();
         if (invincible <= 0f)
         {
             FindObjectOfType<PlayerMovement>().tag = "Player";
+            startBlinking = false;
+            FindObjectOfType<PlayerMovement>().gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 
@@ -45,4 +53,19 @@ public class GameController : MonoBehaviour
         FindObjectOfType<PlayerMovement>().tag = "Invincible";
         invincible = 5;
     }
-}
+
+    private void SpriteBlinkingEffect()
+    {
+        if (invincible >= 0.0f)
+        {
+            if (FindObjectOfType<PlayerMovement>().gameObject.GetComponent<SpriteRenderer>().enabled == true)
+            {
+                FindObjectOfType<PlayerMovement>().gameObject.GetComponent<SpriteRenderer>().enabled = false;  //make changes
+            }
+            else
+            {
+                FindObjectOfType<PlayerMovement>().gameObject.GetComponent<SpriteRenderer>().enabled = true;   //make changes
+            }
+        }
+    }
+    }
