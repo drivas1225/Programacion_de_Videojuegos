@@ -60,12 +60,26 @@ public class DinasourMovement : MonoBehaviour
         }
         movment.x = horizontal;
         movment.y = vertical;
-        rb.MovePosition(rb.position + movment * movSpeed * Time.deltaTime);
-        currentPosition = rb.transform.position;
+        
         animator.SetFloat("Horizontal", movment.x);
         animator.SetFloat("Vertical", movment.y);
         animator.SetFloat("Speed", movment.sqrMagnitude);
     }
 
-    
+    void FixedUpdate()
+    {
+        
+        if (currentPosition == transform.position)
+        {
+            Vector3Int currentPos = tilemap.WorldToCell(transform.position);
+            Vector3 worldPos = tilemap.GetCellCenterWorld(currentPos);
+            rb.position = new Vector2(worldPos[0], worldPos[1]);
+        }
+        else
+        {
+            rb.MovePosition(rb.position + movment * movSpeed * Time.deltaTime);
+            currentPosition = rb.transform.position;
+        }
+    }
+
 }
