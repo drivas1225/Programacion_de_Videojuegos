@@ -28,5 +28,10 @@ public class enemyData : MonoBehaviour
         {
             FindObjectOfType<GameController>().die();
         }
+        if(other.gameObject.tag == "Enemy")
+        {
+            other.GetComponent<DinasourMovement>().horizontal *= -1;
+            other.GetComponent<DinasourMovement>().vertical *= -1;
+        }
     }
 }

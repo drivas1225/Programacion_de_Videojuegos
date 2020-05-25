@@ -12,10 +12,7 @@ public class GameController : MonoBehaviour
     public int score = 0;
     public Tilemap tilemap;
     public float invincible = 5f;
-    public float spriteBlinkingTimer = 0.0f;
-    public float spriteBlinkingMiniDuration = 0.1f;
-    public float spriteBlinkingTotalTimer = 0.0f;
-    public float spriteBlinkingTotalDuration = 1.0f;
+  
     public bool startBlinking = false;
     // Start is called before the first frame update
     void Start()

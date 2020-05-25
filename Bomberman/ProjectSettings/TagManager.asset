@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bomb
   - Power-up
+  - Enemy
+  - Invincible
   layers:
   - Default
   - TransparentFX
