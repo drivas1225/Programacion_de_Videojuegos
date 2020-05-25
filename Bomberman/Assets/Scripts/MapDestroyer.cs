@@ -19,6 +19,10 @@ public class MapDestroyer : MonoBehaviour
     private void Start()
     {
     }
+    private void Update()
+    {
+        
+    }
 
 
     public void Explode (Vector2 worldPos)
@@ -65,7 +69,8 @@ public class MapDestroyer : MonoBehaviour
             return false;
         }
         Vector3 cellsize = tilemap.cellSize;
-        Vector3 rayStart = tilemap.CellToWorld(cell) + new Vector3(cellsize[0] / 2, cellsize[1] / 2, 0);
+        Vector3 rayStart = tilemap.CellToWorld(cell);
+        Debug.DrawRay(rayStart, new Vector2(cellsize[0], cellsize[1]), Color.white);
         RaycastHit2D hit = Physics2D.Raycast(rayStart, new Vector2(cellsize[0], cellsize[1]), 1);
         Vector2 cellCenterPos = tilemap.GetCellCenterWorld(cell);
         if (hit.collider)
