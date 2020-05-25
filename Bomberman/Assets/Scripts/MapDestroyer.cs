@@ -16,12 +16,16 @@ public class MapDestroyer : MonoBehaviour
     public GameObject power5Prefab;
     public int radio = 2;
 
+    private void Start()
+    {
+    }
+
 
     public void Explode (Vector2 worldPos)
     {
         Vector3Int originCell = tilemap.WorldToCell(worldPos);
         ExplodeCell(originCell);
-        for(int i = 1; i <= radio; i++)
+        for (int i = 1; i <= radio; i++)
         {
             if(!ExplodeCell(originCell + new Vector3Int(i, 0, 0)))
             {

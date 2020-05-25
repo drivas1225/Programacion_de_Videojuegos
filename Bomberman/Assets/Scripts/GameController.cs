@@ -20,17 +20,24 @@ public class GameController : MonoBehaviour
     public Text speedText;
     public GameObject portalPrefab;
     public GameObject instantiatedPortal;
+    private AudioManager aManager;
 
     public bool startBlinking = false;
     // Start is called before the first frame update
     void Start()
     {
         scoreText.text ="0000";
+        aManager = FindObjectOfType<AudioManager>();
+        aManager.Play("Level Start");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (aManager.finishedPlaying("Level Start"))
+        {
+            aManager.Play("Demo");
+        }
     }
     private void FixedUpdate()
     {
@@ -70,6 +77,7 @@ public class GameController : MonoBehaviour
         FindObjectOfType<PlayerMovement>().movSpeed = 5;
         FindObjectOfType<PlayerMovement>().tag = "Invincible";
         invincible = 5;
+        aManager.Play("Death");
     }
 
     private void SpriteBlinkingEffect()

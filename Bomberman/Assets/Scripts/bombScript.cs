@@ -5,7 +5,13 @@ using UnityEngine;
 public class bombScript : MonoBehaviour
 {
     public float countdown = 2f;
+    private AudioManager aManager;
 
+    private void Start()
+    {
+        aManager = FindObjectOfType<AudioManager>();
+
+    }
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "Invincible")
@@ -21,6 +27,7 @@ public class bombScript : MonoBehaviour
         countdown -= Time.deltaTime;
         if (countdown <= 0f)
         {
+            aManager.Play("Explosion");
             Destroy(gameObject);
             FindObjectOfType<MapDestroyer>().Explode(transform.position);
             FindObjectOfType<GameController>().currentBombs -= 1;
