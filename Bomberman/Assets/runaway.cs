@@ -73,7 +73,10 @@ public class runaway : MonoBehaviour
         }
         else
         {
-            GetComponentInParent<DinasourMovement>().movSpeed = 1;
+            if(GetComponentInParent<DinasourMovement>().movSpeed != 1)
+            {
+                GetComponentInParent<DinasourMovement>().movSpeed --;
+            }
         }
 
     }

@@ -122,6 +122,8 @@ MonoBehaviour:
   movSpeed: 5
   rb: {fileID: 575561854764533974}
   animator: {fileID: 575561854764533970}
+  mode: 0
+  movment: {x: 0, y: 0}
 --- !u!58 &575561854764533971
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -137,7 +139,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.48
+  m_Radius: 0.33185625
 --- !u!95 &575561854764533970
 Animator:
   serializedVersion: 3

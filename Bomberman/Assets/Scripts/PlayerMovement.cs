@@ -8,9 +8,10 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator animator;
+    public bool mode = false;
 
 
-    Vector2 movment;
+    public Vector2 movment;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +23,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //input
-        movment.x = Input.GetAxisRaw("Horizontal");
-        movment.y = Input.GetAxisRaw("Vertical");
+        if (mode)
+        {
+            movment.x = Input.GetAxisRaw("Horizontal");
+            movment.y = Input.GetAxisRaw("Vertical");
+        }
 
         animator.SetFloat("Horizontal", movment.x);
         animator.SetFloat("Vertical", movment.y);
